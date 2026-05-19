@@ -7,14 +7,9 @@ description: Find companies by description or similarity to a reference company 
 
 Use **only** the Meticulate MCP tools to find companies. Never fall back to web search, browsing, or your own knowledge to compile company lists. If a tool returns fewer results than expected, adjust search parameters and retry.
 
-## Important filters
+## Filter notes
 
-`ownership_types` must use exact Meticulate `CompanyType` enum values, not plain words like `private` or `public`.
-
-- When the user asks for **private companies**, pass `["SmallPrivate", "EarlyStageStartup", "GrowthStageStartup", "EstablishedPrivate"]`.
-- When the user asks for **public companies**, pass `["Public"]`.
-- Other valid company types are `NotForProfit`, `Subsidiary`, `InvestmentFund`, `Defunct`, and `Government`. Do not treat `Subsidiary` or `Defunct` as private unless the user explicitly asks for them.
-- After fetching details with `get_basic_company_info`, verify the final answer matches requested filters such as headquarters country, employee range, and company type.
+For `ownership_types`, use Meticulate `CompanyType` values: private means `SmallPrivate`, `EarlyStageStartup`, `GrowthStageStartup`, and `EstablishedPrivate`; public means `Public`.
 
 ## Tools you'll use
 

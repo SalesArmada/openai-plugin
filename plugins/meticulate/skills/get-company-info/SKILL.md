@@ -21,7 +21,7 @@ Use **only** the Meticulate MCP tools to look up company data. Never fall back t
    - Revenue: `revenue_min`/`max` (USD)
    - Founding: `year_founded`
    - Headquarters: `hq_country`, `hq_region`, `hq_metro`
-   - Ownership: `company_type` as a detailed Meticulate enum, not a simple private/public flag. Valid values include `SmallPrivate`, `EarlyStageStartup`, `GrowthStageStartup`, `EstablishedPrivate`, `Public`, `NotForProfit`, `Subsidiary`, `InvestmentFund`, `Defunct`, and `Government`.
+   - Company type: `company_type`
    - LinkedIn: `linkedin_followers`, `linkedin_followers_90day_growth`
    - Classification: `tags` (industry/vertical labels)
    - Other: `web_traffic`, `hype_rating`, `product_score`
@@ -30,6 +30,6 @@ Use **only** the Meticulate MCP tools to look up company data. Never fall back t
    - For a single company: show a detailed summary of its firmographic profile.
    - For multiple companies: show a comparison table with the most relevant fields.
    - If the user asked a specific question (e.g. "which is the biggest"), highlight the relevant field and sort by it.
-   - If the user asks whether companies are public or private, map `SmallPrivate`, `EarlyStageStartup`, `GrowthStageStartup`, and `EstablishedPrivate` to private; map `Public` to public; call out `Subsidiary`, `Defunct`, `Government`, `NotForProfit`, and `InvestmentFund` separately.
+   - If the user asks for a public/private summary, derive it from `company_type`: `SmallPrivate`, `EarlyStageStartup`, `GrowthStageStartup`, and `EstablishedPrivate` are private; `Public` is public. Call out other company types separately.
 
 4. If the question goes beyond firmographics (e.g. qualitative assessments, custom metrics, fundraising, or data not in the standard fields), suggest using the **research-companies** skill to create a custom topic for deeper analysis.
