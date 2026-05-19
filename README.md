@@ -1,14 +1,14 @@
 # Meticulate Codex Plugin
 
-This repo contains the Meticulate Codex plugin. It bundles Meticulate company-intelligence skills with the existing Meticulate app connector.
+This repo contains a Codex marketplace with one plugin: Meticulate. The plugin bundles Meticulate company-intelligence skills with the existing Meticulate app connector.
 
 ## Structure
 
-- `.codex-plugin/plugin.json` is the plugin manifest.
-- `.app.json` maps the plugin to the Meticulate app connector.
-- `skills/` contains task-focused Codex skills copied from the existing MCP server.
-- `assets/` contains Meticulate brand assets used by the manifest.
-- `.agents/plugins/marketplace.json` exposes this repo-root plugin as a Codex marketplace entry for review and testing.
+- `.agents/plugins/marketplace.json` exposes the plugin to Codex.
+- `plugins/meticulate/.codex-plugin/plugin.json` is the plugin manifest.
+- `plugins/meticulate/.app.json` maps the plugin to the Meticulate app connector.
+- `plugins/meticulate/skills/` contains task-focused Codex skills.
+- `plugins/meticulate/assets/` contains Meticulate brand assets used by the manifest.
 
 ## Local Testing
 
@@ -23,5 +23,6 @@ Then restart Codex and install or enable `Meticulate` from the plugin directory.
 After changing plugin files, refresh the installed marketplace copy:
 
 ```bash
-codex plugin marketplace upgrade meticulate
+codex plugin marketplace remove meticulate
+codex plugin marketplace add .
 ```

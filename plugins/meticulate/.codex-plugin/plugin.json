@@ -21,7 +21,7 @@
     "shortDescription": "Find and research companies",
     "longDescription": "Meticulate helps sales and go-to-market teams research companies directly in Codex. Upload a company list or describe the accounts you care about, then identify companies, find similar targets, pull key business details, and answer structured research questions across accounts.",
     "developerName": "Sales Armada, Inc.",
-    "category": "Business",
+    "category": "Research",
     "capabilities": [
       "Read",
       "Write",
@@ -31,9 +31,9 @@
     "privacyPolicyURL": "https://meticulate.ai/privacy",
     "termsOfServiceURL": "https://meticulate.ai/terms",
     "defaultPrompt": [
-      "Conduct research on this list of companies.",
-      "Find competitors to Snowflake and compare their firmographics.",
-      "Search for companies matching this market description."
+      "Use Meticulate to find 50 competitors to Runpod in the US and Europe.",
+      "Find 25 private US companies selling AI-powered customer support software.",
+      "Compare Databricks, Snowflake, MongoDB, Confluent, and Elastic firmographics."
     ],
     "composerIcon": "./assets/MeticulateIconSquare.svg",
     "logo": "./assets/logo.png",
