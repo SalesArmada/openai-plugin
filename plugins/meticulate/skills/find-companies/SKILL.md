@@ -7,6 +7,15 @@ description: Find companies by description or similarity to a reference company 
 
 Use **only** the Meticulate MCP tools to find companies. Never fall back to web search, browsing, or your own knowledge to compile company lists. If a tool returns fewer results than expected, adjust search parameters and retry.
 
+## Important filters
+
+`ownership_types` must use exact Meticulate `CompanyType` enum values, not plain words like `private` or `public`.
+
+- When the user asks for **private companies**, pass `["SmallPrivate", "EarlyStageStartup", "GrowthStageStartup", "EstablishedPrivate"]`.
+- When the user asks for **public companies**, pass `["Public"]`.
+- Other valid company types are `NotForProfit`, `Subsidiary`, `InvestmentFund`, `Defunct`, and `Government`. Do not treat `Subsidiary` or `Defunct` as private unless the user explicitly asks for them.
+- After fetching details with `get_basic_company_info`, verify the final answer matches requested filters such as headquarters country, employee range, and company type.
+
 ## Tools you'll use
 
 - **recognize_companies** — resolve company names/URLs to standard IDs
@@ -27,7 +36,7 @@ Note: find_similar_companies already uses the reference company's semantic profi
 ### When a general description is given (e.g. "GPU cloud providers")
 
 1. Break the description into semantic fields: `core_business` (required), plus `main_offerings`, `customers`, `tech_innovations` as applicable.
-2. Add any numerical filters mentioned (employee count, revenue, founding year, HQ country as 2-letter ISO codes like "US", ownership type).
+2. Add any numerical filters mentioned (employee count, revenue, founding year, HQ country as 2-letter ISO codes like "US", ownership type using the enum values above).
 3. Call **search_companies** with these fields. If results are thin, rephrase semantic fields or broaden the description and retry.
 
 ## Presenting results

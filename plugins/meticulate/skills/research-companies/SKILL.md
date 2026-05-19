@@ -34,7 +34,9 @@ Use **only** the Meticulate MCP tools to answer research questions. Never fall b
    - For options: write 10-15 word descriptions with observable signals that differentiate each option. Describe how to identify a company that fits, not why the option matters.
    - For score: provide a rubric where each level is specific enough that two independent reviewers would assign the same score.
    - For number: include the unit in `stat_to_estimate` when values span wide magnitudes (e.g. "Annual revenue in millions of USD").
-   - Pick 1-4 `standard_elements` in `info_to_use`. Most classification questions only need `basic_firmographics`. Add `landing_page` only for product positioning detail. Set `websearch_volume` only for recent news or events.
+   - Pass `instructions` as a structured object with a `format` field, not as prose or a JSON string.
+   - Pick 1-4 `standard_elements` in `info_to_use`. Most classification questions only need `basic_firmographics`. Add `landing_page` only for product positioning detail. Set `websearch_volume` only for recent news or events. Do not use a field named `web_search`.
+   - If using `run_conditions.standard_filters.company_type_filter`, use exact Meticulate `CompanyType` enum values. For private companies, use `SmallPrivate`, `EarlyStageStartup`, `GrowthStageStartup`, and `EstablishedPrivate`; do not pass `private`.
 
 4. **Run the topic.** Call **run_topics_on_companies** with the company IDs and topic ID(s).
 
