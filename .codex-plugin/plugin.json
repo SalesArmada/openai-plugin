@@ -1,0 +1,42 @@
+{
+  "name": "meticulate",
+  "version": "1.0.0",
+  "description": "Meticulate helps sales and go-to-market teams research companies directly in Codex.",
+  "author": {
+    "name": "Sales Armada, Inc.",
+    "email": "info@meticulate.ai",
+    "url": "https://meticulate.ai/"
+  },
+  "homepage": "https://meticulate.ai/",
+  "keywords": [
+    "company-intelligence",
+    "firmographics",
+    "sales-intelligence",
+    "market-research"
+  ],
+  "skills": "./skills/",
+  "apps": "./.app.json",
+  "interface": {
+    "displayName": "Meticulate",
+    "shortDescription": "Find and research companies",
+    "longDescription": "Meticulate helps sales and go-to-market teams research companies directly in Codex. Upload a company list or describe the accounts you care about, then identify companies, find similar targets, pull key business details, and answer structured research questions across accounts.",
+    "developerName": "Sales Armada, Inc.",
+    "category": "Business",
+    "capabilities": [
+      "Read",
+      "Write",
+      "Research"
+    ],
+    "websiteURL": "https://meticulate.ai/",
+    "privacyPolicyURL": "https://meticulate.ai/privacy",
+    "termsOfServiceURL": "https://meticulate.ai/terms",
+    "defaultPrompt": [
+      "Conduct research on this list of companies.",
+      "Find competitors to Snowflake and compare their firmographics.",
+      "Search for companies matching this market description."
+    ],
+    "composerIcon": "./assets/MeticulateIconSquare.svg",
+    "logo": "./assets/logo.png",
+    "screenshots": []
+  }
+}

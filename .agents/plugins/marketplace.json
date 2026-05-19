@@ -1,0 +1,20 @@
+{
+  "name": "meticulate",
+  "interface": {
+    "displayName": "Meticulate"
+  },
+  "plugins": [
+    {
+      "name": "meticulate",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Business"
+    }
+  ]
+}
